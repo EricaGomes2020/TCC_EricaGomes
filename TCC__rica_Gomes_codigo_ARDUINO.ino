@@ -50,8 +50,8 @@ const char *mqtt_server = "broker.hivemq.com";// Endereço do broker público MQ
 const char *topic = "Tempdata";               // Tópico para publicação
 
 // Credenciais da rede Wi-Fi
-const char *ssid = "Simone Gomes oi fibra 2.4g";
-const char *password = "brazrosi";
+const char *ssid = "************";
+const char *password = "*********";
 
 // Objetos para conexão
 WiFiClient espClient;
