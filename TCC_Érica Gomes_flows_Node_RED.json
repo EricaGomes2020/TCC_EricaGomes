@@ -1,0 +1,2019 @@
+[
+    {
+        "id": "befa54e4f1a72206",
+        "type": "tab",
+        "label": "Fluxo 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a78101c4ee661d56",
+        "type": "debug",
+        "z": "befa54e4f1a72206",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "4263d21d0cd727a7",
+        "type": "mqtt in",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "topic": "toNodeRED",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "979938570a06b34b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 140,
+        "wires": [
+            [
+                "a78101c4ee661d56"
+            ]
+        ]
+    },
+    {
+        "id": "80d275c390c10f82",
+        "type": "mqtt out",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "topic": "fromNodeRED",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "979938570a06b34b",
+        "x": 880,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e5e94fca980137f4",
+        "type": "inject",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 580,
+        "y": 140,
+        "wires": [
+            [
+                "80d275c390c10f82"
+            ]
+        ]
+    },
+    {
+        "id": "1040cf6481214c02",
+        "type": "mqtt in",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "topic": "parametros",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "979938570a06b34b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 310,
+        "y": 880,
+        "wires": [
+            [
+                "699ed2599e9121c1"
+            ]
+        ]
+    },
+    {
+        "id": "699ed2599e9121c1",
+        "type": "debug",
+        "z": "befa54e4f1a72206",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "0ac3823e344f0961",
+        "type": "inject",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"tensao\":33,\"corrente\":10}",
+        "payloadType": "json",
+        "x": 290,
+        "y": 820,
+        "wires": [
+            [
+                "0525b8b9d878b424"
+            ]
+        ]
+    },
+    {
+        "id": "0525b8b9d878b424",
+        "type": "mqtt out",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "topic": "JSONfromNode",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "979938570a06b34b",
+        "x": 720,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "dee7792c256e830a",
+        "type": "mqtt in",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "topic": "tensao",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "979938570a06b34b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 50,
+        "y": 400,
+        "wires": [
+            [
+                "cc40337f1b599d34",
+                "caf7b19de22abd2e",
+                "2d5267a6549e0c2f",
+                "9280185333705c7f",
+                "b0200e4810951c7e",
+                "f926fc4e38d9dcb1",
+                "c8e98acdf748e4b5"
+            ]
+        ]
+    },
+    {
+        "id": "66d09155557b39b0",
+        "type": "mqtt in",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "topic": "corrente",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "979938570a06b34b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 540,
+        "y": 420,
+        "wires": [
+            [
+                "4749dfdeda8c6692",
+                "4c208e93ed476286",
+                "9280185333705c7f",
+                "6614df0cb727d66a",
+                "51a615544ab40d60",
+                "ab7eef89b9090d8e"
+            ]
+        ]
+    },
+    {
+        "id": "cc40337f1b599d34",
+        "type": "debug",
+        "z": "befa54e4f1a72206",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "4749dfdeda8c6692",
+        "type": "debug",
+        "z": "befa54e4f1a72206",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 820,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "c8e98acdf748e4b5",
+        "type": "ui_chart",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "group": "c7afe0e454af6814",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Tensão",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#4a9ad3",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 400,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f926fc4e38d9dcb1",
+        "type": "ui_text",
+        "z": "befa54e4f1a72206",
+        "group": "5a6210c92a90f0b5",
+        "order": 2,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Tensão atual RMS:",
+        "format": "{{msg.payload}} V",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 370,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "b0200e4810951c7e",
+        "type": "function",
+        "z": "befa54e4f1a72206",
+        "name": "function 1",
+        "func": "var valor = msg.payload;\n\n\n//if (msg.payload == 0) {\n   // msg.payload = \"Sem alimentação!!! Valor: \" + valor + \"V\";\n   //return msg;\n//}\n\nif (msg.payload >= 133) {\n    msg.payload = \"SOBRETENSÃO - A tensão está acima do permitido! Valor: \" + valor + \"V\";\n    return msg;\n}\n\n//if (msg.payload <= 120 && msg.payload!=0) {\n  //  msg.payload = \"SUBTENSÃO - A tensão está abaixo do permitido!!! Valor: \" + valor + \"V\";\n    //return msg;\n//}\n\nreturn null;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 520,
+        "wires": [
+            [
+                "c8d56c187a5336ea"
+            ]
+        ]
+    },
+    {
+        "id": "130cff75c99b6a00",
+        "type": "ui_slider",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "label": "Dimerização",
+        "tooltip": "",
+        "group": "04437f917011cfd7",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "valor",
+        "topicType": "str",
+        "min": 0,
+        "max": "254",
+        "step": 1,
+        "className": "",
+        "x": 470,
+        "y": 200,
+        "wires": [
+            [
+                "972dcc639f7cefa8"
+            ]
+        ]
+    },
+    {
+        "id": "c3381a11a0b9e4d0",
+        "type": "inject",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "valor",
+        "payload": "valor",
+        "payloadType": "str",
+        "x": 240,
+        "y": 200,
+        "wires": [
+            [
+                "130cff75c99b6a00"
+            ]
+        ]
+    },
+    {
+        "id": "6614df0cb727d66a",
+        "type": "ui_text",
+        "z": "befa54e4f1a72206",
+        "group": "5a6210c92a90f0b5",
+        "order": 6,
+        "width": 7,
+        "height": 1,
+        "name": "",
+        "label": "Corrente atual IRMS:",
+        "format": "{{msg.payload}} A",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 860,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "4699f95189be1775",
+        "type": "ui_toast",
+        "z": "befa54e4f1a72206",
+        "position": "bottom right",
+        "displayTime": "30",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "ALERTA DE CORRENTE",
+        "name": "",
+        "x": 890,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "ab7eef89b9090d8e",
+        "type": "function",
+        "z": "befa54e4f1a72206",
+        "name": "function 2",
+        "func": "var valor = msg.payload;\n\n\n//if (msg.payload == 0) {\n //   msg.payload = \"Luminária Queimada!!! Valor: \" + valor + \"A\";\n   // return msg;\n//}\n\nif(msg.payload>=0.49)\n{\n    msg.payload = \"SOBRECORRENTE - A corrente está acima da permitida! Valor: \" + valor + \"A\";\n    return msg;\n}\n\n\n//if(msg.payload<=0.43 &&  msg.payload!=0)\n//{\n  //  msg.payload = \"SUBCORRENTE - A corrente está abaixo da permitida! Valor: \" + valor + \"A\";\n    //return msg;\n//}\n\n\n\n\nreturn null;\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 580,
+        "wires": [
+            [
+                "4699f95189be1775"
+            ]
+        ]
+    },
+    {
+        "id": "972dcc639f7cefa8",
+        "type": "mqtt out",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "topic": "controle",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "979938570a06b34b",
+        "x": 700,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "ba18d42a3c0aea9d",
+        "type": "mqtt out",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "topic": "controle1",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "979938570a06b34b",
+        "x": 580,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "3c5642e330ea543e",
+        "type": "mqtt out",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "topic": "controle2",
+        "qos": "0",
+        "retain": "false",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "979938570a06b34b",
+        "x": 580,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "26f0cde441f317fd",
+        "type": "ui_button",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "group": "04437f917011cfd7",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "OFF",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#B22222",
+        "className": "",
+        "icon": "",
+        "payload": "on",
+        "payloadType": "str",
+        "topic": "on",
+        "topicType": "str",
+        "x": 363,
+        "y": 260,
+        "wires": [
+            [
+                "ba18d42a3c0aea9d",
+                "525592ad338d3dce",
+                "7b7aca580f79b125"
+            ]
+        ]
+    },
+    {
+        "id": "90ec9f228a56af2b",
+        "type": "ui_button",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "group": "04437f917011cfd7",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "ON",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#2E8B57",
+        "className": "",
+        "icon": "",
+        "payload": "off",
+        "payloadType": "str",
+        "topic": "off",
+        "topicType": "str",
+        "x": 370,
+        "y": 320,
+        "wires": [
+            [
+                "3c5642e330ea543e",
+                "525592ad338d3dce",
+                "7b7aca580f79b125"
+            ]
+        ]
+    },
+    {
+        "id": "fe04eab6b88c67d5",
+        "type": "inject",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "on",
+        "payload": "on",
+        "payloadType": "str",
+        "x": 90,
+        "y": 260,
+        "wires": [
+            [
+                "26f0cde441f317fd"
+            ]
+        ]
+    },
+    {
+        "id": "3980db6b69aaf414",
+        "type": "inject",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "off",
+        "payloadType": "str",
+        "x": 90,
+        "y": 320,
+        "wires": [
+            [
+                "90ec9f228a56af2b"
+            ]
+        ]
+    },
+    {
+        "id": "51a615544ab40d60",
+        "type": "ui_chart",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "group": "c7afe0e454af6814",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Corrente",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#4a9ad3",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 860,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b5a5fc9a4b3bacdf",
+        "type": "inject",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "payload": "start",
+        "payloadType": "str",
+        "x": 170,
+        "y": 1060,
+        "wires": [
+            [
+                "860044705a9e84eb"
+            ]
+        ]
+    },
+    {
+        "id": "860044705a9e84eb",
+        "type": "function",
+        "z": "befa54e4f1a72206",
+        "name": "function 3",
+        "func": "setInterval(function () {\n\n    var data = new Date();\n    var horas = data.getHours();\n    var minuto = data.getMinutes();\n    var dias = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];\n    var dia = dias[data.getDay()];\n    var diasemana = data.getDate();\n    var meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];\n    var mes = meses[data.getMonth()];\n\n    var horaminuto = horas.toString().padStart(2, '0') + ':' + minuto.toString().padStart(2, '0');\n    var dataextenso = dia + ' ' + diasemana + ' de ' + mes;\n\n    node.send([{ payload_data: dataextenso, payload_hora: horaminuto }])\n\n}, 5000);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1060,
+        "wires": [
+            [
+                "cd84b4c553402507",
+                "793bf9b4f5e080a9"
+            ]
+        ]
+    },
+    {
+        "id": "793bf9b4f5e080a9",
+        "type": "debug",
+        "z": "befa54e4f1a72206",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "cd84b4c553402507",
+        "type": "ui_template",
+        "z": "befa54e4f1a72206",
+        "group": "04437f917011cfd7",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n    .total01 {\n        display: flex;\n        justify-content: center;\n        aling-intens: center;\n        flex-direction: column;\n        text-align: center;\n        margin: auto;\n        background-color: #00000060;\n        border: 1px solid #8C8C8C;\n        border-radius: 20px;\n        width: 90%;\n        min-height: 60%;\n    }\n\n    .texto-data01 {\n        display: flex;\n        margin: auto;\n        color: #FFFFFF;\n        font-size: 12px;\n    }\n\n    .texto-hora01 {\n        display: flex;\n        margin: auto;\n        color: #FFFFFF;\n        font-size: 70px;\n    }\n</style>\n\n<div class=\"total01\">\n    <br>\n    <div class=\"texto-data01\">\n        {{msg.payload_data}}\n    </div>\n    <div class=\"texto-hora01\">\n        {{msg.payload_hora}}\n    </div>\n    <br>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 540,
+        "y": 1080,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fae8a1f18bada024",
+        "type": "ui_text",
+        "z": "befa54e4f1a72206",
+        "group": "04437f917011cfd7",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Estado da lâmpada:",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 860,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "3627a7424aa25908",
+        "type": "ui_button",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "group": "4c57436edce5098e",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Gerar relátorio",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "gerar",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 1180,
+        "wires": [
+            [
+                "756a3532eb829033"
+            ]
+        ]
+    },
+    {
+        "id": "756a3532eb829033",
+        "type": "function",
+        "z": "befa54e4f1a72206",
+        "name": "Montar_rel",
+        "func": "const estado = flow.get(\"estadoLampada\") || \"Desconhecido\";\nconst estado1 = flow.get(\"estadoTensao\") || \"Desconhecido\";\nconst estado2 = flow.get(\"estadoCorrente\") || \"Desconhecido\";\n\nconst agora = new Date();\n\n// Recupera o histórico anterior ou cria um novo array\nlet historicoL = flow.get(\"historicoLampada\") || [];\nlet historicoT = flow.get(\"historicoTensao\") || [];\nlet historicoC = flow.get(\"historicoCorrente\") || [];\n\n\n// Adiciona o novo registro\nhistoricoL.push({\n    estado: estado,\n    dataHora: agora.toISOString()\n});\n\nhistoricoT.push({\n    estado: estado1,\n    dataHora: agora.toISOString()\n});\n\nhistoricoC.push({\n    estado: estado2,\n    dataHora: agora.toISOString()\n});\n\n\n\n\n\n// Remove registros com mais de 24 horas\nconst limite = new Date(agora.getTime() - 24 * 60 * 60 * 1000);\nhistoricoL = historicoL.filter(registro => new Date(registro.dataHora) >= limite);\nhistoricoT = historicoT.filter(registro => new Date(registro.dataHora) >= limite);\nhistoricoC = historicoC.filter(registro => new Date(registro.dataHora) >= limite);\n\n// Salva o histórico atualizado\nflow.set(\"historicoLampada\", historicoL);\nflow.set(\"historicoTensao\", historicoT);\nflow.set(\"historicoCorrente\", historicoC);\n\n\n// Gera o relatório\nlet relatorio = \"Relatório do Sistema (Últimas 24 horas)\\n----------------------\\n\";\nhistoricoL.forEach(registro => {\n    const dataFormatada = new Date(registro.dataHora).toLocaleString();\n    relatorio += `Estado da Lâmpada: ${registro.estado} | Data/Hora: ${dataFormatada}\\n`;\n    relatorio += `Valor da tensão: ${registro.estado1} | Data/Hora: ${dataFormatada}\\n`;\n    relatorio += `Valor da corrente: ${registro.estado2} | Data/Hora: ${dataFormatada}\\n`;\n\n});\n\nmsg.payload = relatorio;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 1180,
+        "wires": [
+            [
+                "72df20f9f26ee587"
+            ]
+        ]
+    },
+    {
+        "id": "525592ad338d3dce",
+        "type": "function",
+        "z": "befa54e4f1a72206",
+        "name": "salvar_estado",
+        "func": "flow.set(\"estadoLampada\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "72df20f9f26ee587",
+        "type": "file",
+        "z": "befa54e4f1a72206",
+        "name": "relatório",
+        "filename": "C:\\Users\\User\\Desktop\\relatorio.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "utf8",
+        "x": 560,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ed83a31f2d198808",
+        "type": "ui_template",
+        "z": "befa54e4f1a72206",
+        "group": "4c57436edce5098e",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"text-align: center;\">\n  <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Logo_CEFET-MG.png/768px-Logo_CEFET-MG.png\" alt=\"Imagem da Estação\" style=\"width:50%;\">\n</div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 640,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "caf7b19de22abd2e",
+        "type": "function",
+        "z": "befa54e4f1a72206",
+        "name": "salvar_tensao",
+        "func": "flow.set(\"estadoTensao\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4c208e93ed476286",
+        "type": "function",
+        "z": "befa54e4f1a72206",
+        "name": "salvar_corrente",
+        "func": "flow.set(\"estadoCorrente\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c8d56c187a5336ea",
+        "type": "ui_toast",
+        "z": "befa54e4f1a72206",
+        "position": "bottom right",
+        "displayTime": "30",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "Cancel",
+        "raw": false,
+        "className": "",
+        "topic": "ALERTA DE TENSÃO",
+        "name": "",
+        "x": 450,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "7e6a9ec78b9cb129",
+        "type": "mqtt in",
+        "z": "befa54e4f1a72206",
+        "name": "Receber GPS via MQTT",
+        "topic": "gps/neo6m",
+        "qos": "0",
+        "datatype": "auto",
+        "broker": "mqtt_broker",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 1460,
+        "wires": [
+            [
+                "41d74943d7173e49"
+            ]
+        ]
+    },
+    {
+        "id": "41d74943d7173e49",
+        "type": "json",
+        "z": "befa54e4f1a72206",
+        "name": "Converter JSON",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 370,
+        "y": 1460,
+        "wires": [
+            [
+                "4e8832ccea547a8d",
+                "778e4f9979ac95f3"
+            ]
+        ]
+    },
+    {
+        "id": "4e8832ccea547a8d",
+        "type": "debug",
+        "z": "befa54e4f1a72206",
+        "name": "Ver dados GPS",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "778e4f9979ac95f3",
+        "type": "function",
+        "z": "befa54e4f1a72206",
+        "name": "Atualizar marcador",
+        "func": "msg.payload = {\n    name: \"Localização Atual\",\n    lat: msg.payload.lat,\n    lon: msg.payload.lng,\n    icon: \"fa-map-marker\",\n    iconColor: \"blue\",\n    layer: \"gps\"\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 1480,
+        "wires": [
+            [
+                "fa7ffa04c27323d2",
+                "ed06e291fb674114"
+            ]
+        ]
+    },
+    {
+        "id": "fa7ffa04c27323d2",
+        "type": "worldmap",
+        "z": "befa54e4f1a72206",
+        "name": "Mapa GPS",
+        "lat": "",
+        "lon": "",
+        "zoom": "",
+        "layer": "OSMG",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "true",
+        "hiderightclick": "false",
+        "coords": "deg",
+        "path": "",
+        "overlist": "DR,CO,RA,DN,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriO,EsriDG,NatGeo,UKOS,OpTop",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 850,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "9280185333705c7f",
+        "type": "function",
+        "z": "befa54e4f1a72206",
+        "name": "Calcular Potência",
+        "func": "// Descobre qual valor chegou\nlet topic = msg.topic;\nlet valor = parseFloat(msg.payload);\n\n// Armazena o valor no fluxo\nif (topic === \"tensao\") {\n    flow.set(\"tensao\", valor);\n} else if (topic === \"corrente\") {\n    flow.set(\"corrente\", valor);\n}\n\n// Recupera os dois valores\nlet tensao = flow.get(\"tensao\");\nlet corrente = flow.get(\"corrente\");\n\nif (tensao !== undefined && corrente !== undefined) {\n    let potencia = tensao * corrente;\n    return { payload: potencia.toFixed(2) };\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 700,
+        "wires": [
+            [
+                "fbc62cb9acd74dca",
+                "6a59b88cc9fbf0d2",
+                "41a2349f571750b7"
+            ]
+        ]
+    },
+    {
+        "id": "fbc62cb9acd74dca",
+        "type": "ui_text",
+        "z": "befa54e4f1a72206",
+        "group": "58468227b7116290",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Potência",
+        "label": "Potência:",
+        "format": "{{msg.payload}} VA",
+        "layout": "row-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 760,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "6a59b88cc9fbf0d2",
+        "type": "ui_gauge",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "group": "58468227b7116290",
+        "order": 2,
+        "width": 8,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Potência",
+        "label": "W",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 760,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "41a2349f571750b7",
+        "type": "ui_chart",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "group": "66b580640953ad1f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Potência",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 760,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2e3fd082ebf18317",
+        "type": "ui_template",
+        "z": "befa54e4f1a72206",
+        "group": "dcacfab213e55f5d",
+        "name": "Redirecionar",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<script>\n    window.open('http://localhost:1880/worldmap/', '_blank');\n</script>",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 870,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ed06e291fb674114",
+        "type": "ui_worldmap",
+        "z": "befa54e4f1a72206",
+        "group": "dcacfab213e55f5d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "map",
+        "lat": "",
+        "lon": "",
+        "zoom": "",
+        "layer": "OSMG",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "true",
+        "panlock": "true",
+        "zoomlock": "true",
+        "hiderightclick": "false",
+        "coords": "deg",
+        "showgrid": "false",
+        "showruler": "true",
+        "allowFileDrop": "true",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriO,EsriDG,NatGeo,UKOS,OpTop,HB",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 870,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "2d5267a6549e0c2f",
+        "type": "debug",
+        "z": "befa54e4f1a72206",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 220,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "69be169dfe27fda6",
+        "type": "ui_template",
+        "z": "befa54e4f1a72206",
+        "group": "66fc8a38545570b3",
+        "name": "login 59",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "format": "<style>\n    .total59 {\n        display: flex;\n        flex-direction: column;\n        text-align: center;\n        margin: auto;\n        background-color: #ffffff40 !important;\n        border-radius: 20px;\n        width: 90%;\n        border: 1px solid #ffffff40 !important;\n    }\n\n    .senha59 {\n        width: 90%;\n        margin: auto;\n        padding: 4px 4px;\n        box-sizing: border-box;\n        background-color: #ffffff40;\n        border-radius: 20px;\n        text-align: center;\n    }\n\n    .autorizar59 {\n        width: 50%;\n        margin: auto;\n        padding: 4px 4px;\n        box-sizing: border-box;\n        background-color: #ffffff60;\n        border-radius: 20px;\n        text-align: center;\n    }\n\n    .senha59: :placeholder {\n        color: #000000;\n    }\n</style>\n\n<div class=\"total59\">\n    <br>\n    <input class=\"senha59\" type=\"password\" placeholder=\"Senha\"/>\n    <br>\n    <button class=\"autorizar59\" ng-click=\"autorizar37()\">Autorizar</button>\n    <br>\n</div>\n\n<script>\n    (function(scope) {\n        const obj = document.querySelector('.senha59');\n        const button = document.querySelector('.autorizar59');\n        \n        obj.addEventListener('keyup', function(event) {\n            if (event.key === 'Enter') {\n                const payload = obj.value;\n                scope.send({payload});\n            }\n        });\n        \n        button.addEventListener('click', function() {\n            const payload = obj.value;\n            scope.send({payload});\n        });\n    })(scope);\n</script>",
+        "storeOutMessages": true,
+        "fwdInMessages": false,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 120,
+        "y": 1300,
+        "wires": [
+            [
+                "e5b60dbfbf0a5ba2",
+                "0be60f1217629639"
+            ]
+        ]
+    },
+    {
+        "id": "e5b60dbfbf0a5ba2",
+        "type": "switch",
+        "z": "befa54e4f1a72206",
+        "name": "1234",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1234",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 1260,
+        "wires": [
+            [
+                "ab5a113960a42fa9"
+            ]
+        ]
+    },
+    {
+        "id": "0be60f1217629639",
+        "type": "switch",
+        "z": "befa54e4f1a72206",
+        "name": "4321",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "4321",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 270,
+        "y": 1360,
+        "wires": [
+            [
+                "45258a08c5bbb107"
+            ]
+        ]
+    },
+    {
+        "id": "ab5a113960a42fa9",
+        "type": "function",
+        "z": "befa54e4f1a72206",
+        "name": "Acesso_total",
+        "func": "node.send([{payload:{\"tab\":\"Telegestão\"}}])\n\nsetTimeout(function () {\n    \n    msg.payload = {\n        \"tabs\": {\n            \"show\": [\n                \"Telegestão\"\n                \n            ]\n        }\n    };\n\n    node.send(msg); \n}, 200);\n\n\nsetTimeout(function () {\n\n    msg.payload = {\n        \"group\": {\n            \"show\": [\n                \"Telegestão_Controle_de_Iluminação\",\n                \"Telegestão_Tensão_e_Corrente\",\n                \"Telegestão_Potência\",\n            ]\n        }\n    };\n\n    node.send(msg);\n}, 300); \n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1260,
+        "wires": [
+            [
+                "c16d831a55be952a"
+            ]
+        ]
+    },
+    {
+        "id": "45258a08c5bbb107",
+        "type": "function",
+        "z": "befa54e4f1a72206",
+        "name": "Acesso_limitado",
+        "func": "node.send([{ payload: { \"tab\": \"Telegestão\" } }])\n\nsetTimeout(function () {\n\n    msg.payload = {\n        \"tabs\": {\n            \"show\": [\n                \"Dados\"\n                                 ]\n        }\n    };\n\n    node.send(msg);\n}, 200);\n\nsetTimeout(function () {\n\n    msg.payload = {\n        \"tabs\": {\n            \"hide\": [\n             \"Localização\"\n            ]\n        }\n    };\n\n    node.send(msg);\n}, 300);\n\n\nsetTimeout(function () {\n\n    msg.payload = {\n        \"group\": {\n            \"show\": [\n                \"Dados_Tensão\"\n            ]\n        }\n    };\n\n    node.send(msg);\n}, 400); \n\n\n    setTimeout(function () {\n\n        msg.payload = {\n            \"group\": {\n                \"hide\": [\n                  \"Localização_Localização\"  \n                    \n                ]\n            }\n        };\n\n        node.send(msg);\n    }, 500); ",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1360,
+        "wires": [
+            [
+                "c16d831a55be952a"
+            ]
+        ]
+    },
+    {
+        "id": "c16d831a55be952a",
+        "type": "ui_ui_control",
+        "z": "befa54e4f1a72206",
+        "name": "",
+        "events": "change",
+        "x": 580,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2abb071ce68fca31",
+        "type": "ui_template",
+        "z": "befa54e4f1a72206",
+        "group": "66fc8a38545570b3",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"text-align: center;\">\n  <img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Logo_CEFET-MG.png/768px-Logo_CEFET-MG.png\" alt=\"Imagem da Estação\" style=\"width:50%;\">\n</div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 920,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a2e09012c627084a",
+        "type": "ui_template",
+        "z": "befa54e4f1a72206",
+        "group": "5a6210c92a90f0b5",
+        "name": "",
+        "order": 9,
+        "width": 11,
+        "height": 5,
+        "format": "<div style=\"display: flex; justify-content: center; align-items: center; height: 100%;\">\n  <img src=\"https://i.postimg.cc/P50wjvNW/Figura-2-1.png\" alt=\"Imagem da Estação\" style=\"width:60%;\">\n</div>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 220,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7af5e1531e759eed",
+        "type": "ui_template",
+        "z": "befa54e4f1a72206",
+        "group": "4c57436edce5098e",
+        "name": "",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"text-align: center;\">\n  <img src=\"https://img.freepik.com/vetores-premium/equipe-de-controle-de-dados-de-analise-de-negocios_18660-1406.jpg\" alt=\"Imagem da Estação\" style=\"width:60%;\">\n</div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 500,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c15b8dd69d92fef7",
+        "type": "ui_template",
+        "z": "befa54e4f1a72206",
+        "group": "66b580640953ad1f",
+        "name": "",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"text-align: center;\">\n  <img src=\"https://www.iped.com.br/_upload/galleries/2015/07/01/energia-eltrica-55946f5ba1150.jpg\" alt=\"Imagem da Estação\" style=\"width:90%;\">\n</div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 780,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a8a506e5a1d78883",
+        "type": "ui_template",
+        "z": "befa54e4f1a72206",
+        "group": "58468227b7116290",
+        "name": "",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"text-align: center;\">\n  <img src=\"https://www.secom.cefetmg.br/wp-content/uploads/sites/86/2024/12/CEFET-MG_completa-positivo-300x266.png\" alt=\"Imagem da Estação\" style=\"width:60%;\">\n</div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 80,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "30eaf445ed0cf252",
+        "type": "ui_template",
+        "z": "befa54e4f1a72206",
+        "group": "021787f2c46a1d06",
+        "name": "",
+        "order": 2,
+        "width": 12,
+        "height": 11,
+        "format": "<div style=\"text-align: center; background-color: #e6f2ff; padding: 20px; border-radius: 12px;\">\n  <h1 style=\"color: #3399ff; font-size: 36px;\">Sistema de Telegestão para Iluminação Pública</h1>\n  <p style=\"font-size: 24px; color: #3399ff;\">Discente: Érica Gomes Fernandes</p>\n</div>\n\n<div style=\" justify-content: center; align-items: center; height: 100%;\">\n  <img src=\"https://www.qluzpalhoca.com.br/wp-content/uploads/2024/11/QLuz-blog-ILUMINACAOINTELIGENTE_blog-1024x546.png\" alt=\"Imagem da Estação\" style=\"width:100%;\">\n</div>\n\n\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 360,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7b7aca580f79b125",
+        "type": "function",
+        "z": "befa54e4f1a72206",
+        "name": "function 4",
+        "func": "if (msg.payload === \"on\") {\n    msg.payload = \"Desligado\";\n} else if (msg.payload === \"off\") {\n    msg.payload = \"Ligado\";\n} \nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 380,
+        "wires": [
+            [
+                "fae8a1f18bada024"
+            ]
+        ]
+    },
+    {
+        "id": "39e207ee3d0527d3",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "66fc8a38545570b3",
+        "order": 2,
+        "width": 10,
+        "height": 1
+    },
+    {
+        "id": "8ecb0e00e3c3df0c",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3c5f6e3ec0d99e52",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b3f937c6b0546001",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "64376eb79d1c9260",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e5c020059688e47e",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4d2630780a5248d4",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3075bb2a80318724",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "7c21d71527487386",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8fc254b2e2026b05",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a276a98968674545",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d2d10f5d527b0b66",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "0fda5ee1e797c964",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 13,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "93edac68f8f66af9",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 14,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ee4f6f1dec9337a8",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 15,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "77214e810ff1b636",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 16,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "89bc0bd092d45b4e",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 17,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "09cefa3821062190",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 18,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3537691604630499",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 19,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "28cc1d46a271e87c",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 20,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "4212ee4466c5dffd",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 21,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "20ecdb43830f30a8",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 22,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "8491700cbfa0481b",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "021787f2c46a1d06",
+        "order": 23,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9b49d75c2b09566d",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "04437f917011cfd7",
+        "order": 4,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "70354705d4d8a47f",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "04437f917011cfd7",
+        "order": 6,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "34b9ae8fb0b72cf8",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "5a6210c92a90f0b5",
+        "order": 1,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "c3228d811ea4ddf4",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "5a6210c92a90f0b5",
+        "order": 3,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "09c544cad64514fe",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "5a6210c92a90f0b5",
+        "order": 4,
+        "width": 11,
+        "height": 1
+    },
+    {
+        "id": "9a8c8e04d8199f05",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "5a6210c92a90f0b5",
+        "order": 5,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "d72575cec1f43848",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "5a6210c92a90f0b5",
+        "order": 7,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "a647dd950c441ff3",
+        "type": "ui_spacer",
+        "z": "befa54e4f1a72206",
+        "name": "spacer",
+        "group": "5a6210c92a90f0b5",
+        "order": 8,
+        "width": 11,
+        "height": 1
+    },
+    {
+        "id": "979938570a06b34b",
+        "type": "mqtt-broker",
+        "name": "localhost",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c7afe0e454af6814",
+        "type": "ui_group",
+        "name": "Tensão",
+        "tab": "8a8e8749b98efb69",
+        "order": 2,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5a6210c92a90f0b5",
+        "type": "ui_group",
+        "name": "Tensão e Corrente",
+        "tab": "8a232beeadfa020f",
+        "order": 2,
+        "disp": true,
+        "width": 11,
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "04437f917011cfd7",
+        "type": "ui_group",
+        "name": "Controle ",
+        "tab": "8a232beeadfa020f",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "4c57436edce5098e",
+        "type": "ui_group",
+        "name": "",
+        "tab": "8a8e8749b98efb69",
+        "order": 1,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "mqtt_broker",
+        "type": "mqtt-broker",
+        "name": "Broker MQTT",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "58468227b7116290",
+        "type": "ui_group",
+        "name": "Potência",
+        "tab": "8a232beeadfa020f",
+        "order": 4,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "66b580640953ad1f",
+        "type": "ui_group",
+        "name": "Potência",
+        "tab": "8a8e8749b98efb69",
+        "order": 3,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "dcacfab213e55f5d",
+        "type": "ui_group",
+        "name": "Localização",
+        "tab": "08448146e93dc5d5",
+        "order": 1,
+        "disp": true,
+        "width": 19,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "66fc8a38545570b3",
+        "type": "ui_group",
+        "name": "Login",
+        "tab": "aee4fc48b49a4030",
+        "order": 1,
+        "disp": false,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "021787f2c46a1d06",
+        "type": "ui_group",
+        "name": "Group 2",
+        "tab": "aee4fc48b49a4030",
+        "order": 2,
+        "disp": false,
+        "width": 14,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8a8e8749b98efb69",
+        "type": "ui_tab",
+        "name": "Dados",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8a232beeadfa020f",
+        "type": "ui_tab",
+        "name": "Telegestão",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "08448146e93dc5d5",
+        "type": "ui_tab",
+        "name": "Localização",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "aee4fc48b49a4030",
+        "type": "ui_tab",
+        "name": "Login",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
